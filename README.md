@@ -6,17 +6,17 @@ A Twine project demonstrating conditional logic and stat-tracking in interactive
 
 This project adapts "The Murders in the Rue Morgue" to practice implementing branching narratives based on player choices and hidden analytical skills. It serves as a proof-of-concept for creating mystery VNs.
 
-📖 About This Game
+📖 **About This Game**
 Project Goal: To transform a linear mystery story into an interactive, choice-driven experience where the player's deduction skills influence the outcome.
 
 Player Role: You take on the role of C. Auguste Dupin's unnamed companion (the narrator). Your task is to analyze evidence and witness testimony alongside Dupin.
 
-Key Game Mechanics
-This VN uses a hidden stat-tracking system to determine the quality of your conclusion:
+**Key Game Mechanics**
+This game uses a hidden stat-tracking system to determine the quality of your conclusion:
 
 Hidden Stat
 
-How It's Used
+**How It's Used**
 
 Observation ($Obs)
 
@@ -33,8 +33,8 @@ Gained by analyzing witness voices and testimony.
 Branching Fork: The player's accumulated score in $Obs + $Logic determines whether they have the "strong evidence" needed to successfully convince Dupin of the shocking truth in Scene 3.
 
 
-
-▶️ How to Play
+**
+▶️ How to Play**
 This game is self-contained within the HTML file.
 
 Direct Access: Open the file named Rue Morgue Deduction VN.html directly in any web browser (Chrome, Firefox, Edge, etc.).
