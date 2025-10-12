@@ -1,67 +1,16 @@
-# Deduction Game: Murders at Rue Morgue
-Solve the impossible locked-room mystery of Rue Morgue. A choice-driven visual novel proving deduction skills are key.  Based on Edgar A Poe's story.
+The Murders in the Rue Morgue: Deduction Game
+A Twine project demonstrating conditional logic and hidden stat-tracking.
 
+This document details a proof-of-concept visual novel (VN) adaptation of Edgar Allan Poe's classic short story, "The Murders in the Rue Morgue." This project was created specifically to practice transforming a linear narrative into a robust, non-linear, choice-driven game. It showcases the core implementation of branching narratives and hidden stat-tracking using the Twine engine, an essential skill for developing mystery and interactive fiction titles.
 
-A Twine project demonstrating conditional logic and stat-tracking in interactive fiction.
+📖 Project Rationale and Gameplay
+The Rue Morgue is used as a template to constrain the development focus purely to deduction mechanics, avoiding unnecessary external complications.
 
-This project adapts "The Murders in the Rue Morgue" to practice implementing branching narratives based on player choices and hidden analytical skills. It serves as a proof-of-concept for creating mystery VNs.
+Player Role: You act as C. Auguste Dupin's assistant (the narrator). Your goal is to analyze the bizarre crime scene and witness testimony, making analytical choices that determine your proficiency.
 
-📖 **About This Game**
-Project Goal: To transform a linear mystery story into an interactive, choice-driven experience where the player's deduction skills influence the outcome.
+Key Mechanics: Success relies on three hidden stats: Observation ($Obs), Logic ($Logic), and Interrogation ($Interro). Each choice you make awards points to one of these variables. The combined score of $Obs and $Logic is the crucial determinant for the True End. If your score meets the threshold (8 points), your final deduction is presented with "strong evidence," leading to the most satisfying conclusion. If insufficient, your correct guess is delivered with "low confidence," reflecting a lack of mastery.
 
-Player Role: You take on the role of C. Auguste Dupin's unnamed companion (the narrator). Your task is to analyze evidence and witness testimony alongside Dupin.
+▶️ Technical Execution
+This draft was built in the Twine 2 application using the Harlowe 3.3.9 Story Format. The robust and often verbose conditional point allocation is handled by combining the (link:) and (go-to:) macros to guarantee action execution upon a click. The final branching logic is managed by explicit (if:)/(else:) checks.
 
-**Key Game Mechanics**
-This game uses a hidden stat-tracking system to determine the quality of your conclusion:
-
-Hidden Stat
-
-**How It's Used**
-
-Observation ($Obs)
-
-Gained by focusing on physical clues (e.g., the tuft of hair).
-
-Logic ($Logic)
-
-Gained by focusing on deductive truths (e.g., the untouched money).
-
-Interrogation ($Interro)
-
-Gained by analyzing witness voices and testimony.
-
-Branching Fork: The player's accumulated score in $Obs + $Logic determines whether they have the "strong evidence" needed to successfully convince Dupin of the shocking truth in Scene 3.
-
-
-**
-▶️ How to Play**
-This game is self-contained within the HTML file.
-
-Direct Access: Open the file named Rue Morgue Deduction VN.html directly in any web browser (Chrome, Firefox, Edge, etc.).
-
-Gameplay: Click the underlined text options to advance the story and make choices.
-
-🛠️ Technical Details (For Developers)
-This draft was built using the Twine 2 application with the Harlowe 3.3.9 Story Format.
-
-The core mechanics rely on the explicit use of the (link:) and (go-to:) macros to ensure actions are executed conditionally:
-
-(link: "Clue Choice")[
-    (set: $Obs to $Obs + 5)
-    (go-to: "Next Scene")
-]
-
-
-
-The final branching logic uses a reliable (if:) / (else:) block to check the cumulative score against a threshold (8 points):
-
-(if: $Logic + $Obs >= 8)[
-    (link: "Strong Evidence Choice")...
-]
-(else:)[
-    (link: "Low Confidence Choice")...
-]
-
-
-
-Note: This file is a developmental proof-of-concept and does not contain all art assets, sound, or final polish.
+To play, open the Rue Morgue Deduction.html file directly in any web browser.
